@@ -8,12 +8,28 @@ void main() {
 class MyApp extends StatelessWidget {
   List stats = [1, 2, 4];
   List achievements = ["Duty Hours", "Bugs Solved", "Hours Slept"];
+  bool isSwitched = false;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Facebook',
+            style: TextStyle(color: Colors.black),
+          ),
+          backgroundColor: Colors.grey[50],
+          actions: [
+            Switch(
+              onChanged: null,
+              value: isSwitched,
+              inactiveThumbColor: Colors.black,
+              inactiveTrackColor: Colors.grey,
+            ),
+          ],
+        ),
         body: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -42,6 +58,9 @@ class MyApp extends StatelessWidget {
                       ],
                     ),
                   ],
+                ),
+                SizedBox(
+                  height: 25,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -84,11 +103,6 @@ class MyApp extends StatelessWidget {
                       child: Text('Achievemnt goes here'),
                     ),
                   ),
-                ),
-                FlatButton(
-                  onPressed: () {},
-                  color: Colors.grey,
-                  child: Text('Display ID'),
                 ),
               ],
             ),
