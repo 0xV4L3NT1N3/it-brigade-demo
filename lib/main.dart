@@ -6,93 +6,80 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  // variable declarations go at the top
   List stats = [1, 2, 4];
   List achievements = ["Duty Hours", "Bugs Solved", "Hours Slept"];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // disable debug banner
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              children: [
-                SizedBox(
-                  height: 40,
-                ),
-                Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.black,
-                      radius: 30,
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Zark Muckberg',
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        Text('President'),
-                      ],
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      children: [
-                        Text(stats[0].toString()),
-                        Text(achievements[0])
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text(stats[1].toString()),
-                        Text(achievements[1])
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text(stats[2].toString()),
-                        Text(achievements[2])
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Text(
-                  'Dishonourable Awards',
-                  style: TextStyle(fontSize: 20),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  height: 250,
-                  width: 180,
-                  child: Card(
-                    child: Center(
-                      child: Text('Achievemnt goes here'),
-                    ),
+        // top appBar
+        appBar: AppBar(title: Text('Facebook', style: TextStyle(color: Colors.black),), backgroundColor: Colors.white,),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 25,),
+              // name, title and profile photo
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircleAvatar(radius: 25,),
+                  SizedBox(width: 15,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Zark Muckberg', style: TextStyle(fontSize: 18),),
+                      Text('President'),
+                    ],
                   ),
+                ],
+              ),
+              SizedBox(height: 25,),
+              // interesting stats
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      Text('24', style: TextStyle(fontSize: 20),),
+                      Text('Duty Days'),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text('34', style: TextStyle(fontSize: 20),),
+                      Text('Bugs Solved'),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text('4', style: TextStyle(fontSize: 20),),
+                      Text('Hours Slept'),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 25,),
+              Padding(
+                padding: const EdgeInsets.only(left: 15.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('Dishonourable Awards', style: TextStyle(fontSize: 22),)),
+              ),
+              SizedBox(height: 15,),
+              ListView(
+                shrinkWrap: true,
+                children: [
+                  Card(child: ListTile(leading: Icon(Icons.music_note_rounded, color: Colors.pinkAccent, size: 35,), title: Text('Rock Star'), subtitle: Text('Blasted music through the lab speaker'),),),
+                  Card(child: ListTile(leading: Icon(Icons.restaurant_menu, color: Colors.green, size: 35,), title: Text('Master Muncher'), subtitle: Text('Ate in the lab more than twice'),),),
+                  Card(child: ListTile(leading: Icon(Icons.laptop_chromebook_rounded, color: Colors.lightBlueAccent, size: 35,), title: Text('Totally Not-On-Purpose'), subtitle: Text('Destroyed more than 3 lab PCs'),),),
+                ],
                 ),
-                FlatButton(
-                  onPressed: () {},
-                  color: Colors.grey,
-                  child: Text('Display ID'),
-                ),
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
