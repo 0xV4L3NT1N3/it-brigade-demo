@@ -17,7 +17,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         // top appBar
-        appBar: AppBar(title: Text('Facebook', style: TextStyle(color: Colors.black),), backgroundColor: Colors.white,),
+        appBar: AppBar(title: Text('Facebook', style: TextStyle(color: Colors.black),), backgroundColor: Colors.grey[50], actions: [
+          Switch(value: false, onChanged: null, inactiveThumbColor: Colors.black, )
+        ],),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -70,6 +72,7 @@ class MyApp extends StatelessWidget {
                   child: Text('Dishonourable Awards', style: TextStyle(fontSize: 22),)),
               ),
               SizedBox(height: 15,),
+              // achievement cards
               ListView(
                 shrinkWrap: true,
                 children: [
