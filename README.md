@@ -1,16 +1,18 @@
-# itb_id
+# Introduction To Flutter 2021 Masterclass
 
-A new Flutter application.
+Building a simple ID profile to document key achievements during your school term as an IT Brigadier. Built with ❤️ using (Flutter)[https://flutter.dev/]. 
 
-## Getting Started
+### Referencing Code 
 
-This project is a starting point for a Flutter application.
+If you've missed out on certain portions of the demo, go to the `lib` > `main.dart` to catch up on the parts you're missing. 
 
-A few resources to get you started if this is your first Flutter project:
+### Cloning This Repo 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+If you'd like a completely fresh start 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Download the zip file of this project here
+
+<img src="https://user-images.githubusercontent.com/33112835/115140186-872f5080-a068-11eb-9ef3-29c2f2f1c8f4.png" alt="Italian Trulli">
+
+3. Unzip the file, and open it in Android Studio. 
+4. Run `main.dart` ( the green Play button ) using either an emulator or virtual device. 
