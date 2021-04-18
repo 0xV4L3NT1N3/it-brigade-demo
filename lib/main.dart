@@ -6,184 +6,99 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // variable declarations go at the top
-  List stats = [1, 2, 4];
-  List achievements = ["Duty Hours", "Bugs Solved", "Hours Slept"];
-
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // disable debug banner
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // top appBar
         appBar: AppBar(
-          title: Text(
-            'Facebook',
-            style: TextStyle(color: Colors.black),
-          ),
-          backgroundColor: Colors.grey[50],
-          actions: [
-            Switch(
-              value: false,
-              onChanged: null,
-              inactiveThumbColor: Colors.black,
-            )
-          ],
+          backgroundColor: Colors.pinkAccent,
+          title: Text('MBSSKL IT Brigade'),
+          elevation: 15,
         ),
-        body: ListView(
+        body: Column(
           children: [
-            SizedBox(
-              height: 25,
-            ),
-            // name, title and profile photo
+            SizedBox(height: 30,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CircleAvatar(
-                  radius: 43,
-                  backgroundColor: Colors.blueGrey,
-                  child: CircleAvatar(
-                    radius: 40,
-                    backgroundColor: Colors.grey[50],
-                    child: CircleAvatar(
-                      radius: 35,
-                      backgroundImage: AssetImage('images/profile.jpg'),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 15,
-                ),
+                CircleAvatar(backgroundImage: NetworkImage('https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png'), radius: 35,),
+                SizedBox(width: 10,),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Zark Muckberg',
-                      style: TextStyle(
-                        fontSize: 22,
-                      ),
-                    ),
-                    Text(
-                      'President',
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
+                    Text('Hide The Pain Harold', style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),),
+                    Text('Chairman of WallStreetBets', style: TextStyle(fontSize: 18,),),
                   ],
                 ),
               ],
             ),
-            SizedBox(
-              height: 25,
-            ),
-            // interesting stats
+            SizedBox(height: 30,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
                   children: [
-                    Text(
-                      '24',
-                      style: TextStyle(fontSize: 20),
+                    Text('15', style: TextStyle(fontSize: 25),),
+                    Row(
+                      children: [
+                        Icon(Icons.hourglass_bottom_rounded),
+                        Text('Duty Hours'),
+                      ],
                     ),
-                    Text('Duty Days'),
                   ],
                 ),
                 Column(
                   children: [
-                    Text(
-                      '34',
-                      style: TextStyle(fontSize: 20),
+                    Text('32', style: TextStyle(fontSize: 25),),
+                    Row(
+                      children: [
+                        Icon(Icons.laptop_mac_rounded),
+                        Text('Bugs Solved'),
+                      ],
                     ),
-                    Text('Bugs Solved'),
                   ],
                 ),
                 Column(
                   children: [
-                    Text(
-                      '4',
-                      style: TextStyle(fontSize: 20),
+                    Text('8', style: TextStyle(fontSize: 25),),
+                    Row(
+                      children: [
+                        Icon(Icons.nightlight_round),
+                        Text('Hours Slept'),
+                      ],
                     ),
-                    Text('Hours Slept'),
                   ],
                 ),
               ],
             ),
-            SizedBox(
-              height: 25,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15.0),
-              child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Dishonourable Awards',
-                    style: TextStyle(fontSize: 22),
-                  )),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            // achievement cards
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            SizedBox(height: 20,),
+            Text('Dishonourable Awards', style: TextStyle(fontSize: 21),),
+            SizedBox(height: 20,),
+            Expanded(
               child: ListView(
-                shrinkWrap: true,
                 children: [
                   Card(
-                    elevation: 3,
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.music_note_rounded,
-                        color: Colors.pinkAccent,
-                        size: 35,
-                      ),
-                      title: Text('Rock Star'),
-                      subtitle: Text('Blasted music through the lab speaker'),
-                    ),
+                    elevation: 15,
+                    child: ListTile(title: Text('Rock Star'), subtitle: Text('Played music through the lab speaker'), leading: Icon(Icons.music_note_rounded, size: 35, color: Colors.pink[900],),),
                   ),
                   Card(
-                    elevation: 3,
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.restaurant_menu,
-                        color: Colors.green,
-                        size: 35,
-                      ),
-                      title: Text('Master Muncher'),
-                      subtitle: Text('Ate in the lab more than twice'),
-                    ),
+                    elevation: 15,
+                    child: ListTile(title: Text('Mischief Managed'), subtitle: Text('Hid stuff in the lab during spotchecks'), leading: Icon(Icons.album_rounded, size: 35, color: Colors.green[900],),),
                   ),
                   Card(
-                    elevation: 3,
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.laptop_chromebook_rounded,
-                        color: Colors.lightBlueAccent,
-                        size: 35,
-                      ),
-                      title: Text('Totally Not-On-Purpose'),
-                      subtitle: Text('Destroyed more than 3 lab PCs'),
-                    ),
+                    elevation: 15,
+                    child: ListTile(title: Text('Master Chef'), subtitle: Text('Ate in more than 4 occasions in the lab'), leading: Icon(Icons.restaurant_menu_rounded, size: 35, color: Colors.deepOrange[900],),),
                   ),
                   Card(
-                    elevation: 3,
-                    child: ListTile(
-                      leading: Icon(
-                        Icons.local_fire_department,
-                        color: Colors.deepOrangeAccent,
-                        size: 35,
-                      ),
-                      title: Text('Sharp Shooter'),
-                      subtitle: Text('Victorious in a 5v1 CS 1.6 match'),
-                    ),
+                    elevation: 15,
+                    child: ListTile(title: Text('Totall-Not-On-Purpose'), subtitle: Text('Reinstalled Windows on 4 lab PCs'), leading: Icon(Icons.report_problem_rounded, size: 35, color: Colors.red[900],),),
                   ),
                 ],
               ),
             ),
           ],
-        )
+        ),
       ),
     );
   }
