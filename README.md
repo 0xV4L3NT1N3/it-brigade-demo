@@ -1,6 +1,6 @@
 # Introduction To Flutter 2021 Masterclass
 
-Building a simple ID profile to document key achievements during your school term as an IT Brigadier. Built with ❤️ using (Flutter)[https://flutter.dev/]. 
+Building a simple ID profile to document key achievements during your school term as an IT Brigadier. Built with ❤️ using [Flutter](https://flutter.dev/). 
 
 ### Referencing Code 
 
