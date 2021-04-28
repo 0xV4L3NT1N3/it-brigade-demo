@@ -15,4 +15,7 @@ If you'd like a completely fresh start
 <img src="https://user-images.githubusercontent.com/33112835/115140186-872f5080-a068-11eb-9ef3-29c2f2f1c8f4.png" alt="Italian Trulli">
 
 3. Unzip the file, and open it in Android Studio. 
-4. Run `main.dart` ( the green Play button ) using either an emulator or virtual device. 
+
+<img src="https://user-images.githubusercontent.com/33112835/116348670-1aaf1100-a821-11eb-8b1b-f5c4fa0b9225.png" alt="Italian Trulli">
+
+5. Run `main.dart` ( the green Play button ) using either an emulator or virtual device. 
